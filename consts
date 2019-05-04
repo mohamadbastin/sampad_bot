@@ -1,0 +1,53 @@
+from telepot.namedtuple import KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove
+# from classes import State
+from config import email_address, telegram_username
+
+
+def keyboard_maker(keyboard_labels):
+    my_keyboard = []
+    for row in keyboard_labels:
+        keyboard_row = []
+        for label in row:
+            keyboard_row.append(KeyboardButton(text=label))
+
+        my_keyboard.append(keyboard_row)
+
+    return ReplyKeyboardMarkup(keyboard=my_keyboard, resize_keyboard=True)
+
+
+# button labels
+
+bl_nashrie = 'نشریه'
+bl_idea_campaign = 'کمپین ایده شما'
+bl_kargoruh_signup = 'ثبت نام کارگروه'
+bl_anformatic = 'انفورماتیک'
+bl_farhangi = 'فرهنگی'
+bl_elmi = 'علمی پژوهشی'
+bl_sendmsg = 'ارسال متن'
+bl_get_nashrie = 'دریافت نشریه'
+
+
+def bl_nashrie_number_maker(n):
+    return 'نشریه شماره {}'.format(n)
+
+
+# texts
+
+text_start = 'به بات انجمن خوش اومدین. یکی از گزینه ها رو انتخاب کنین:'
+text_nashrie = 'یکی از گزینه ها رو انتخاب کنین:'
+text_codemelli = 'لطفا کد ملی خود رو وارد کنین:'
+text_choose_nashrie = 'شماره نشریه رو انتخاب کنین:'
+text_nam = 'نام و نام خانوادگی خود رو وارد کنین:'
+text_number = 'تلفن تماس:'
+text_grad = 'سال فارغ التحصیلی:'
+text_mizan = 'میزان تحصیلات: '
+text_matn = 'متن خود رو وارد کنین:'
+text_ever = 'نا حالا تو این زمینه فعالیت داشتین؟'
+text_reason = 'علت علاقه مندی؟'
+text_tashakor = 'ممنون از همکاریتون.'
+text_callback = 'باهاتون تماس میگیریم.'
+text_tiz = 'در مدارس تیزهوشان تحصیل کرده اید؟'
+text_admin_get_file = 'فایل نشریه:'
+text_admin_get_number = 'شماره نشریه:'
+
+
